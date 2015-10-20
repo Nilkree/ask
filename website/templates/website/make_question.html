@@ -1,0 +1,43 @@
+{% extends 'site_main.html' %}
+{% block profile %}
+class="active"
+{% endblock %}
+{% block content %}
+<div class="container main-part">
+	<div class="container">
+		<div class="row content-part" >
+			<div class="col-xs-12 col-sm-12">
+				{% if error %}
+					{{error}}
+				{% else %}
+					{{to_user.email}}
+
+
+					<form  method="post" role="form">
+					{% csrf_token %}
+						<div class="form-group">
+							<label for="question">Задай мне вопрос</label>
+							<textarea class="form-control" name="question" id="question"></textarea>
+							<button type="submit" class="btn btn-primary">Зберегти</button>
+						</div>
+					</form>
+				{% endif %}
+				<p>Ответы</p>
+				{% for question in questions %}
+					<div>
+						<p><strong>{{question.text}}</strong></p>
+						<p>{{question.answer.text}}</p>
+					</div>
+					<hr>
+				{% endfor %}
+
+				
+		
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+		
+</div>
+{% endblock %}

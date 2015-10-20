@@ -1,0 +1,30 @@
+{% extends 'site_main.html' %}
+{% block question %}
+class="active"
+{% endblock %}
+{% block content %}
+<div class="container main-part">
+	<div class="container">
+		<div class="row content-part" >
+			<div class="col-xs-12 col-sm-12">
+
+
+
+				<p>Вопросы</p>
+				<hr>
+				{% for question in questions %}
+					<div>
+						<p><strong>{{question.text}}</strong></p>
+						<a href="{{question.get_absolute_url}}">ответить</a>
+					</div>
+					<hr>
+				{% endfor %}
+		
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+		
+</div>
+{% endblock %}
