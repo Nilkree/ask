@@ -1,0 +1,8 @@
+*.pyc
+.sqlite3
+.sublime-project
+.sublime-workspace
+media/
+work.txt
+test.html
+test2.html
